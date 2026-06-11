@@ -1,0 +1,27 @@
+# ---------------------------------------------------- #
+#                   EasyBan Messages                   #
+#  Supports MiniMessage (e.g. <red>, <#FF5555>, <bold>)#
+# ---------------------------------------------------- #
+
+prefix: "<dark_gray>[<aqua>EasyBan</aqua>]</dark_gray> "
+no-permission: "<red>You do not have permission to use this command!</red>"
+player-only: "<red>This command can only be used by players.</red>"
+invalid-usage: "<red>Usage: %usage%</red>"
+player-not-found: "<red>Player not found or invalid IP.</red>"
+
+banned-layout: "<red><bold>YOU ARE BANNED!</bold></red><newline><newline><gray>Reason:</gray> <white>%reason%</white><newline><gray>Banned by:</gray> <white>%admin%</white><newline><gray>Server:</gray> <white>%server%</white><newline><gray>Expires:</gray> <white>%time%</white>"
+muted-message: "<red>You are muted on server <yellow>%server%</yellow>! Reason: %reason%</red>"
+ipmuted-message: "<red>Your IP is muted on server <yellow>%server%</yellow>! Reason: %reason%</red>"
+cant-break-message: "<red>You are restricted from breaking blocks on server <yellow>%server%</yellow>! Reason: %reason%</red>"
+
+ban-success: "<green>Player <white>%player%</white> has been banned on <yellow>%server%</yellow>.</green>"
+unban-success: "<green>Player <white>%player%</white> has been unbanned.</green>"
+kick-success: "<green>Player <white>%player%</white> has been kicked.</green>"
+mute-success: "<green>Player <white>%player%</white> has been muted on <yellow>%server%</yellow>.</green>"
+unmute-success: "<green>Player <white>%player%</white> has been unmuted.</green>"
+ipmute-success: "<green>IP <white>%ip%</white> has been muted on <yellow>%server%</yellow>.</green>"
+unmute-ip-success: "<green>IP <white>%ip%</white> has been unmuted.</green>"
+donotbreak-success: "<green>Player <white>%player%</white> has been blocked from breaking blocks on <yellow>%server%</yellow>.</green>"
+deldonotbreak-success: "<green>Player <white>%player%</white> can now break blocks again.</green>"
+
+update-available: "<gold>There is a new version of the plugin available. You have version <red>%current%</red> and the newest one is <green>%newest%</green>.</gold>"

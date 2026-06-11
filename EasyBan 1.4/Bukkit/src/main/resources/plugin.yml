@@ -1,0 +1,14 @@
+name: EasyBan
+version: 1.4
+main: org.example.easyban.EasyBan
+api-version: 1.21
+authors: [VovchikCraft]
+commands:
+  eb:
+    description: Main command for EasyBan
+    usage: /eb <args>
+    permission: easyban.use
+permissions:
+  easyban.use:
+    description: Allows use of ban commands
+    default: op
