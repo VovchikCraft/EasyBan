@@ -1,0 +1,9 @@
+storage:
+  sync-interval: 4
+  mysql:
+    host: "localhost"
+    port: 3306
+    database: "easyban"
+    username: "root"
+    password: ""
+    table-prefix: "eb_"

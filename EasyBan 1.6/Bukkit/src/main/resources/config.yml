@@ -1,0 +1,24 @@
+# ---------------------------------------------------- #
+#                  EasyBan Configuration               #
+# ---------------------------------------------------- #
+
+# Name of this specific server (used for MySQL syncing)
+server-name: "survival"
+
+# Should the plugin check GitHub for new updates on startup?
+checkupdates: true
+
+storage:
+  # Type can be "local" (uses data.yml) or "mysql" (cross-server sync)
+  type: "local"
+  
+  # How often the plugin checks the database for new bans (in seconds)
+  sync-interval: 4
+  
+  mysql:
+    host: "localhost"
+    port: 3306
+    database: "easyban"
+    username: "root"
+    password: ""
+    table-prefix: "eb_" # Optional. Leave blank for no prefix.
