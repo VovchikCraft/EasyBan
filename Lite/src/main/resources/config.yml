@@ -1,6 +1,0 @@
-# ---------------------------------------------------- #
-#               EasyBan-lite Configuration             #
-# ---------------------------------------------------- #
-
-# Should the plugin check GitHub for new updates on startup?
-checkupdates: true
