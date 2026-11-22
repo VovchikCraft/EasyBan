@@ -1,0 +1,31 @@
+# ---------------------------------------------------- #
+#             EasyBan Velocity Configuration           #
+# ---------------------------------------------------- #
+# EasyBan Velocity is an ADD-ON for the main EasyBan plugin.
+# It reads the shared MySQL database and blocks banned players at the proxy,
+# before they can reach any backend server.
+# Only punishments with the scope "all" are enforced here - server-specific
+# punishments stay the job of the backend EasyBan plugin.
+
+storage:
+  # How often the proxy checks the database for new bans (in seconds)
+  sync-interval: 4
+  mysql:
+    host: "localhost"
+    port: 3306
+    database: "easyban"
+    username: "root"
+    password: ""
+    # SSL/TLS mode for the MySQL connection (same values as the backend plugin):
+    #   disable - plain, unencrypted connection (default; fine for localhost/LAN)
+    #   enable  - encrypted connection, server certificate is NOT verified
+    #   verify  - encrypted connection WITH certificate verification
+    ssl-mode: "disable"
+    table-prefix: "" # Must be identical to the backend EasyBan setting.
+
+# Screen shown to a player who is banned from the whole network.
+# Supports MiniMessage (e.g. <red>, <#FF5555>, <bold>, <newline>).
+# Placeholders: %reason%, %admin%, %time%
+messages:
+  banned-layout: "<red><bold>YOU ARE BANNED FROM THE NETWORK!</bold></red><newline><newline><gray>Reason:</gray> <white>%reason%</white><newline><gray>Banned by:</gray> <white>%admin%</white><newline><gray>Expires:</gray> <white>%time%</white>"
+  permanent: "Permanent"

@@ -1,0 +1,63 @@
+# ---------------------------------------------------- #
+#                  EasyBan Configuration               #
+# ---------------------------------------------------- #
+# Name of this specific server (used for MySQL syncing)
+server-name: "survival"
+
+# Should the plugin check GitHub for new updates on startup?
+checkupdates: true
+
+# Language used for all plugin messages.
+# Available by default: en (English), fr (French), de (German), uk (Ukrainian), es (Spanish).
+# Language files are located in the "languages" folder and can be freely edited.
+# Custom files (e.g. "pl.yml") can be added to the languages folder and selected here.
+language: "en"
+
+# Discord integration. This works through a Discord Webhook, which means you do
+# NOT need a Discord bot or any extra plugin. To set it up:
+#   1. In your Discord server, go to Server Settings -> Integrations -> Webhooks.
+#   2. Create a webhook, copy its URL and paste it into "url" below.
+#   3. Set "enabled" to true and choose which events you want to be announced.
+discord:
+  enabled: false
+  # The webhook URL, e.g. "https://discord.com/api/webhooks/123456789/abcdef..."
+  url: ""
+  # Optional cosmetic overrides for the webhook bot appearance.
+  username: "EasyBan"
+  avatar-url: "" # Leave empty to use the webhook's default avatar.
+  # Choose what should be announced in your Discord channel:
+  notify:
+    ban: true         # Player/IP bans and tempbans
+    mute: true        # Player/IP mutes and tempmutes
+    kick: true        # Kicks
+    unpunish: true    # Removal of any punishment (unban, unmute, expiry, etc.)
+    blockbreak: true  # "Do not break blocks" restrictions
+
+# Developer API. When enabled, other plugins can punish, un-punish, query and
+# listen to EasyBan through the EasyBanAPI class.
+# !!! WARNING: only enable this if you actually use it. A malicious or badly
+# written plugin COULD abuse this API to punish players without permission.
+api:
+  enabled: false
+
+storage:
+  # Type can be "local" (uses data.yml) or "mysql" (cross-server sync)
+  type: "local"
+  # How often the plugin checks the database for new bans (in seconds)
+  sync-interval: 4
+  # Automatically delete punishments whose time has run out, instead of keeping
+  # dead rows in data.yml / the MySQL table forever.
+  remove-expired: true
+  mysql:
+    host: "localhost"
+    port: 3306
+    database: "easyban"
+    username: "root"
+    password: ""
+    # SSL/TLS mode for the MySQL connection:
+    #   disable - plain, unencrypted connection (default; fine for localhost/LAN)
+    #   enable  - encrypted connection, server certificate is NOT verified
+    #   verify  - encrypted connection WITH certificate verification
+    #             (the server needs a certificate trusted by your Java truststore)
+    ssl-mode: "disable"
+    table-prefix: "eb_" # Optional. Leave blank for no prefix.
